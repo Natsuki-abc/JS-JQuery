@@ -10,9 +10,9 @@
     <body>
         <h3>ストップウォッチ</h3>
         <div id="time">0:0:0:0</div>
-        <button id="start">スタート</button>
-        <button id="stop">ストップ</button>
-        <button id="reset">リセット</button>
+        <input id="start" type="button" value="スタート" onclick="this.disabled = true;">
+        <input id="stop" type="button" value="ストップ" onclick="this.disabled = true;">
+        <input id="reset" type="button" value="リセット" onclick="getElementById('start').disabled = false; getElementById('stop').disabled = false;">
         <script src="main.js"></script>
     </body>
 </html>
