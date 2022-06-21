@@ -7,14 +7,15 @@ let elapsed = 0;
 let intervalId = null;
 
 function updateTime(){
-    const ms = elapsed % 10;
+    const ms = elapsed % 1000;
     const s = Math.floor(elapsed / 1000) % 60;
     const m = Math.floor(elapsed / (1000*60)) % 60;
     const h = Math.floor(elapsed / (1000*60*60));
 
-    timeElement.innerHTML = `${h}:${m}:${s}:${ms}`;
-}
-
+    const msStr = ms.toString().slice(0,1);
+    
+    timeElement.innerHTML = `${h}:${m}:${s}:${msStr}`;
+} 
 start.addEventListener('click', function(e){
     if (intervalId !== null){ return; }
     let pre = new Date();
